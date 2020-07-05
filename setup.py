@@ -10,7 +10,15 @@ cwd = path.abspath(path.dirname(__file__))
 with open(path.join(cwd, 'README.md'), encoding='utf-8') as file:
     long_description = file.read()
 
-COMMIT_COUNT = "172"
+COMMIT_COUNT = str(len(check_output(
+        [
+            'git',
+            'log',
+            'cli',
+            '--pretty=oneline'
+        ]
+    ).strip().split(b'\n')
+))
 
 MAJOR = COMMIT_COUNT[0] if len(COMMIT_COUNT) > 0 else 0
 MINOR = COMMIT_COUNT[1] if len(COMMIT_COUNT) > 1 else 0
@@ -20,6 +28,12 @@ setup(
     version=f'{MAJOR}.{MINOR}',
 
     packages=find_packages(),
+
+    py_modules=['tsplot'],
+    entry_points='''
+        [console_scripts]
+        hsm=cli:cli
+    ''',
 
     install_requires=[
         'matplotlib~=3.2.1',
