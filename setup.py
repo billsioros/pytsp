@@ -13,7 +13,7 @@ with open(path.join(cwd, 'README.md'), encoding='utf-8') as file:
 with open(path.join(cwd, 'requirements.txt'), encoding='utf-8') as file:
     requirements = file.read().split('\n')
 
-COMMIT_COUNT = str(len(check_output(
+COMMIT_COUNT = len(check_output(
         [
             'git',
             'log',
@@ -21,24 +21,26 @@ COMMIT_COUNT = str(len(check_output(
             '--pretty=oneline'
         ]
     ).strip().split(b'\n')
-))
+)
 
-MAJOR = COMMIT_COUNT[0] if len(COMMIT_COUNT) > 0 else 0
-MINOR = COMMIT_COUNT[1] if len(COMMIT_COUNT) > 1 else 0
+COMMIT_COUNT = f'{COMMIT_COUNT:02d}'
+
+MAJOR = COMMIT_COUNT[0]
+MINOR = COMMIT_COUNT[1]
 
 setup(
     name='pytsp',
     version=f'{MAJOR}.{MINOR}',
 
     packages=find_packages(),
-
-    py_modules=['pytsp'],
-    entry_points='''
-        [console_scripts]
-        tsplot=tsplot:cli
-    ''',
+    include_package_data=True,
 
     install_requires=requirements,
+
+    entry_points='''
+        [console_scripts]
+        tsplot=pytsp.tsplot:cli
+    ''',
 
     author='Vasileios Sioros',
     author_email='billsioros97@gmail.com',
