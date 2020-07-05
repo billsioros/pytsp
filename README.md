@@ -45,7 +45,7 @@ The project consists of:
   - Local search approaches:
     - [2-opt](./pytsp/core/tsp.py#L176)
   - Meta-heuristic approaches:
-    - [Genetic Algorithm](./pytsp/core/genetic.py#L8))
+    - [Genetic Algorithm](./pytsp/core/genetic.py#L8)
     - [Simulated Annealing](./pytsp/core/annealing.py#L17)
     - [Compressed Annealing](./pytsp/core/annealing.py#L64)
 - the **[tsplot](pytsp/tsplot.py#L68)** command line utility, which can be used to demonstrate, compare and chain the various algorithms mentioned above.
