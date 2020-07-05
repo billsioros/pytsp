@@ -34,7 +34,7 @@ _If you are interested in the intricate inner workings of the different algorith
 
 The project consists of:
 
-- the **pytsp** library, which provides different approaches in tackling the Travelling Salesman Problem (with and without Time Windows). These include:
+- the **[pytsp](./pytsp/)** library, which provides different approaches in tackling the Travelling Salesman Problem (with and without Time Windows). These include:
   - Greedy approaches:
     - [Nearest Neighbor Search](./pytsp/core/tsp.py)
   - Convex hull / Geometric approaches:
