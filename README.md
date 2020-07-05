@@ -60,7 +60,7 @@ _What are **Traits** ?_
 
 **[Traits](./pytsp/core/misc/trait.py#L33)**, which are implemented as a **[python metaclass](https://realpython.com/python-metaclasses/)**, are at the core of **pytsp** and provide a flexible and frictionless way of modifying the inner workings of the underlying algorithms.
 
-_Without knowing what **Traits** are supposed to do, could you guess what the following python code will produce as output ?_
+_Could you guess what the following python code will produce as output ?_
 
 ```python
 from pytsp import Trait
