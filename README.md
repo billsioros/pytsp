@@ -37,4 +37,9 @@ The project consists of:
 
 ## Installation
 
-![alt text](img/usage.png)
+```bash
+python -m pip install virtualenv
+python -m virtualenv .env
+. .env/Scripts/activate
+pip install git+https://github.com/billsioros/pytsp
+```
