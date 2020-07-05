@@ -30,24 +30,25 @@ _What is the Travelling Salesman Problem ?_
 - The travelling salesman problem (TSP) asks the following question: "Given a list of cities and the distances between each pair of cities, what is the shortest possible route that visits each city and returns to the origin city?"
 - TSP can be modelled as an undirected weighted graph, such that cities are the graph's vertices, paths are the graph's edges, and a path's distance is the edge's weight. It is a minimization problem starting and finishing at a specified vertex after having visited each other vertex exactly once.
 
-_If you are interested in the intricate inner workings of the different algorithms mentioned below, feel free to check out the [theoretical background section](#theoretical-background)_
+_If you are interested in the intricate inner workings of the different algorithms mentioned below, feel free to check out the [theoretical background section](#theoretical-background)._
 
 ## Overview
 
-The project consists of:
+The project consists of
 
-- the **[pytsp](./pytsp/)** library, which provides different approaches in tackling the Travelling Salesman Problem (with and without Time Windows). These include:
-  - Greedy approaches:
+- the **[pytsp](./pytsp/)** library, which provides different approaches in tackling the Travelling Salesman Problem (with and without Time Windows). These include
+  - Greedy approaches
     - [Nearest Neighbor Search](./pytsp/core/tsp.py#L118)
-  - Convex hull / Geometric approaches:
+  - Convex hull / Geometric approaches
     - [Angle Comparison](./pytsp/core/tsp.py#L151)
     - [Eccentricity Comparison](./pytsp/core/tsp.py#L151)
-  - Local search approaches:
+  - Local search approaches
     - [2-opt](./pytsp/core/tsp.py#L176)
-  - Meta-heuristic approaches:
+  - Meta-heuristic approaches
     - [Genetic Algorithm](./pytsp/core/genetic.py#L8)
     - [Simulated Annealing](./pytsp/core/annealing.py#L17)
     - [Compressed Annealing](./pytsp/core/annealing.py#L64)
+
 - the **[tsplot](pytsp/tsplot.py#L68)** command line utility, which can be used to demonstrate, compare and chain the various algorithms mentioned above.
 
 ## Installation
@@ -108,7 +109,7 @@ you have earned yourself a cookie !
 
 Let's now look at some examples of using **pytsp**. The examples are presented in least to most confusing order.
 
-_The following examples are simplified versions of a subset of the examples provided in the **[examples](./pytsp/examples/)** directory_
+_The following examples are simplified versions of a subset of the examples provided in the **[examples](./pytsp/examples/)** directory._
 
 ### A Toy Travelling Salesman Problem
 
@@ -240,7 +241,6 @@ if __name__ == '__main__':
 
 <img src="./img/usage.png" style="display: block; margin-left: auto; margin-right: auto; width: 80%;"/>
 
-
 ## Theoretical Background
 
-_Special thanks to [Andrinopoulou Christina](https://github.com/ChristinaAndrinopoyloy) for her major contribution in the theoretical research of the problem_
+_Special thanks to [Andrinopoulou Christina](https://github.com/ChristinaAndrinopoyloy) for her major contribution in the theoretical research of the problem._
