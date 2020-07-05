@@ -37,4 +37,4 @@ The project consists of:
 
 ## Installation
 
-![alt text](img/usage.png)
+![alt text](./img/usage.png =100x200)
