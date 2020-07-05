@@ -11,7 +11,7 @@ with open(path.join(cwd, 'README.md'), encoding='utf-8') as file:
     long_description = file.read()
 
 with open(path.join(cwd, 'requirements.txt'), encoding='utf-8') as file:
-    requirements = file.read().split('\n')
+    requirements = list(filter(lambda x: x != '', file.read().split('\n')))
 
 COMMIT_COUNT = len(check_output(
         [
