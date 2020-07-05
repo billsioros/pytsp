@@ -10,6 +10,9 @@ cwd = path.abspath(path.dirname(__file__))
 with open(path.join(cwd, 'README.md'), encoding='utf-8') as file:
     long_description = file.read()
 
+with open(path.join(cwd, 'requirements.txt'), encoding='utf-8') as file:
+    requirements = file.read().split('\n')
+
 COMMIT_COUNT = str(len(check_output(
         [
             'git',
@@ -35,10 +38,7 @@ setup(
         tsplot=tsplot:cli
     ''',
 
-    install_requires=[
-        'matplotlib~=3.2.1',
-        'click~=7.1.2'
-    ],
+    install_requires=requirements,
 
     author='Vasileios Sioros',
     author_email='billsioros97@gmail.com',
