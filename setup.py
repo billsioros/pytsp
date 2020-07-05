@@ -32,7 +32,7 @@ setup(
     py_modules=['tsplot'],
     entry_points='''
         [console_scripts]
-        hsm=cli:cli
+        tsplot=tsplot:cli
     ''',
 
     install_requires=[
