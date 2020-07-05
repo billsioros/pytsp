@@ -37,4 +37,4 @@ The project consists of:
 
 ## Installation
 
-<img src="./img/usage.png" style="display: block; margin-left: auto; margin-right: auto; width: 90%;"/>
+<img src="./img/usage.png" style="display: block; margin-left: auto; margin-right: auto; width: 80%;"/>
