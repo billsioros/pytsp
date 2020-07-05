@@ -32,7 +32,7 @@ setup(
 
     packages=find_packages(),
 
-    py_modules=['tsplot'],
+    py_modules=['pytsp'],
     entry_points='''
         [console_scripts]
         tsplot=tsplot:cli
