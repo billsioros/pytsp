@@ -38,17 +38,17 @@ The project consists of:
 
 - the **[pytsp](./pytsp/)** library, which provides different approaches in tackling the Travelling Salesman Problem (with and without Time Windows). These include:
   - Greedy approaches:
-    - [Nearest Neighbor Search](./pytsp/core/tsp.py)
+    - [Nearest Neighbor Search](./pytsp/core/tsp.py#L118)
   - Convex hull / Geometric approaches:
-    - [Angle Comparison](./pytsp/core/tsp.py)
-    - [Eccentricity Comparison](./pytsp/core/tsp.py)
+    - [Angle Comparison](./pytsp/core/tsp.py#L151)
+    - [Eccentricity Comparison](./pytsp/core/tsp.py#L151)
   - Local search approaches:
-    - [2-opt](./pytsp/core/tsp.py)
+    - [2-opt](./pytsp/core/tsp.py#L176)
   - Meta-heuristic approaches:
-    - [Genetic Algorithm](./pytsp/core/genetic.py))
-    - [Simulated Annealing](./pytsp/core/annealing.py)
-    - [Compressed Annealing](./pytsp/core/annealing.py)
-- the **[tsplot](pytsp/tsplot.py)** command line utility, which can be used to demonstrate, compare and chain the various algorithms mentioned above.
+    - [Genetic Algorithm](./pytsp/core/genetic.py#L8))
+    - [Simulated Annealing](./pytsp/core/annealing.py#L17)
+    - [Compressed Annealing](./pytsp/core/annealing.py#L64)
+- the **[tsplot](pytsp/tsplot.py#L68)** command line utility, which can be used to demonstrate, compare and chain the various algorithms mentioned above.
 
 ## Installation
 
@@ -58,7 +58,7 @@ The project consists of:
 
 _What are **Traits** ?_
 
-**[Traits](./pytsp/core/misc/trait.py)**, which are implemented as a **[python metaclass](https://realpython.com/python-metaclasses/)**, are at the core of **pytsp** and provide a flexible and frictionless way of modifying the inner workings of the underlying algorithms.
+**[Traits](./pytsp/core/misc/trait.py#L33)**, which are implemented as a **[python metaclass](https://realpython.com/python-metaclasses/)**, are at the core of **pytsp** and provide a flexible and frictionless way of modifying the inner workings of the underlying algorithms.
 
 _Without knowing what **Traits** are supposed to do, could you guess what the following python code will produce as output ?_
 
