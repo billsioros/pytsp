@@ -1,5 +1,5 @@
 
-from core import Trait
+from pytsp import Trait
 
 
 class Greet(Trait):

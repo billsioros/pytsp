@@ -3,7 +3,7 @@ import logging
 from random import choice, random, randrange, shuffle
 from string import printable
 
-from core import SimulatedAnnealing
+from pytsp import SimulatedAnnealing
 
 
 class Sort(SimulatedAnnealing):

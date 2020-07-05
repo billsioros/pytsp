@@ -2,7 +2,8 @@
 from random import seed, uniform
 
 import matplotlib.pyplot as plt
-from core import TravellingSalesman
+
+from pytsp import TravellingSalesman
 
 if __name__ == '__main__':
     X_AXIS, Y_AXIS = (-50, +50), (-50, +50)

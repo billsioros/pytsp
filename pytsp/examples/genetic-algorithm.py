@@ -3,7 +3,7 @@ import logging
 from random import choice, random, randrange
 from string import printable
 
-from core import GeneticAlgorithm
+from pytsp import GeneticAlgorithm
 
 
 class GuessString(GeneticAlgorithm):

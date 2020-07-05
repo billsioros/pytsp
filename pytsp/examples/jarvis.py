@@ -2,7 +2,8 @@
 from random import uniform
 
 import matplotlib.pyplot as plt
-from core import jarvis
+
+from pytsp import jarvis
 
 if __name__ == '__main__':
     """
