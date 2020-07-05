@@ -21,7 +21,7 @@
 
 ## Purpose
 
-**pytsp** aims at tackling the Travelling Salesman Problem in Python and providing an interactive way of understanding the problem, the methodologies mentioned above as well as their differences in complexity and efficiency.
+**[pytsp](./pytsp)** aims at tackling the Travelling Salesman Problem in Python and providing an interactive way of understanding the problem, the methodologies mentioned above as well as their differences in complexity and efficiency.
 
 _What is the Travelling Salesman Problem ?_
 
@@ -100,7 +100,7 @@ Hello Mr.Sioros
 Greetings Sir.Vasileios
 ```
 
-you have earned yourself a cookie!
+you have earned yourself a cookie !
 
 ## Examples
 
