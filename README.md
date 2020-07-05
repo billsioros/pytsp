@@ -37,4 +37,4 @@ The project consists of:
 
 ## Installation
 
-![alt text](./img/usage.png =100x200)
+<img src="./img/usage.png" style="display: block; margin-left: auto; margin-right: auto; width: 90%;"/>
