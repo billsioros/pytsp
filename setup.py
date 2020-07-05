@@ -14,7 +14,7 @@ COMMIT_COUNT = str(len(check_output(
         [
             'git',
             'log',
-            'cli',
+            'master',
             '--pretty=oneline'
         ]
     ).strip().split(b'\n')
