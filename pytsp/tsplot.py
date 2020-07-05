@@ -4,9 +4,8 @@ from random import seed, uniform
 
 import click
 
-from cli import plot, safe
-from cli import Dictionary, Timewindow, Trait
-from core import TravellingSalesman, TravellingSalesmanTimeWindows
+from pytsp.cli import Dictionary, Timewindow, Trait, plot, safe
+from pytsp.core import TravellingSalesman, TravellingSalesmanTimeWindows
 
 
 @click.group()
