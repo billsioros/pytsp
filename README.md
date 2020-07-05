@@ -243,4 +243,4 @@ if __name__ == '__main__':
 
 ## Theoretical Background
 
-_Special thanks to [Andrinopoulou Christina](https://github.com/ChristinaAndrinopoyloy)_
+_Special thanks to [Andrinopoulou Christina](https://github.com/ChristinaAndrinopoyloy) for her major contribution in the theoretical research of the problem_
