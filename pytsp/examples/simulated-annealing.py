@@ -1,7 +1,6 @@
 
 import logging
 from random import choice, random, randrange, shuffle
-from string import printable
 
 from pytsp import SimulatedAnnealing
 
@@ -26,9 +25,6 @@ class Sort(SimulatedAnnealing):
                     squared_sum += individual[i] > individual[j]
 
             return squared_sum
-
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
 
 
 if __name__ == '__main__':

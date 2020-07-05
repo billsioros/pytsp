@@ -1,5 +1,5 @@
 
-from random import seed, uniform
+from random import uniform
 
 import matplotlib.pyplot as plt
 
@@ -13,8 +13,9 @@ if __name__ == '__main__':
         for i in range(10)
     ]
 
-    tsp = TravellingSalesman(metric='euclidean')
     depot, cities = cities[0], cities[1:]
+
+    tsp = TravellingSalesman(metric='euclidean')
 
     route, cost = tsp.nearest_neighbor(depot, cities)
 
