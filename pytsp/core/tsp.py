@@ -1,7 +1,7 @@
 
 from random import random, randrange, shuffle
 
-from core import (CompressedAnnealing, GeneticAlgorithm, SimulatedAnnealing,
+from pytsp.core import (CompressedAnnealing, GeneticAlgorithm, SimulatedAnnealing,
                   cached, jarvis)
 
 

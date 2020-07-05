@@ -41,6 +41,6 @@ __all__ = [
     'TravellingSalesmanTimeWindows'
 ]
 
-from core import (AnnealingMixin, CompressedAnnealing, GeneticAlgorithm,
+from pytsp.core import (AnnealingMixin, CompressedAnnealing, GeneticAlgorithm,
                   SimulatedAnnealing, Trait, TravellingSalesman,
                   TravellingSalesmanTimeWindows, cached, jarvis)

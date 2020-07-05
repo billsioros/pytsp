@@ -2,7 +2,7 @@
 from logging import getLogger
 from random import random
 
-from core.misc import Trait
+from pytsp.core.misc import Trait
 
 
 class GeneticAlgorithm(Trait):
