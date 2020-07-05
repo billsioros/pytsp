@@ -153,7 +153,7 @@ class Sort(SimulatedAnnealing):
             return neighbor
 
     class Cost:
-        def least_squares(self, individual):
+        def ordered(self, individual):
             squared_sum = 0
             for i in range(0, len(individual) - 1):
                 for j in range(i + 1, len(individual)):
@@ -163,7 +163,7 @@ class Sort(SimulatedAnnealing):
 
 
 if __name__ == '__main__':
-    sorter = Sort(mutate='shift_1', cost='least_squares')
+    sorter = Sort(mutate='shift_1', cost='ordered')
 
     individual = list(range(10))
 
