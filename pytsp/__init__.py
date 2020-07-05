@@ -1,5 +1,5 @@
 """
-pytsp - The Travelling Salesman (with Time Windows) in Python
+pytsp - The Travelling Salesman (with Time Windows)
 ----
 
 >>> from random import seed, uniform
