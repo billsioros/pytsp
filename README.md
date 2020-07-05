@@ -1,8 +1,10 @@
 <p align="center">
   <img src="https://img.shields.io/badge/license-MIT-yellow"/>
   <img src="https://img.shields.io/badge/version-1.2-blue"/>
-  <img src="https://img.shields.io/badge/language-python-red"/>
+  <img src="https://img.shields.io/badge/python-3.8-blue"/>
   <img src="https://img.shields.io/badge/build-passing-green"/>
+  <img src="https://img.shields.io/badge/maintained-yes-green"/>
+  <img src="https://img.shields.io/badge/status-development-yellow"/>
 </p>
 
 # The Travelling Salesman Problem in Python
