@@ -19,12 +19,12 @@ class Sort(SimulatedAnnealing):
 
     class Cost:
         def ordered(self, individual):
-            squared_sum = 0
+            mispositioned = 0
             for i in range(0, len(individual) - 1):
                 for j in range(i + 1, len(individual)):
-                    squared_sum += individual[i] > individual[j]
+                    mispositioned += individual[i] > individual[j]
 
-            return squared_sum
+            return mispositioned
 
 
 if __name__ == '__main__':
