@@ -1,0 +1,2 @@
+matplotlib~=3.2.1
+click~=7.1.2
