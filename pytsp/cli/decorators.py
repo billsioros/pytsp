@@ -65,21 +65,22 @@ def plot(method):
         plt.tight_layout()
         plt.grid()
 
-        if ctx.obj['format'] is not None:
-            folder = Path.cwd()
-
-            if ctx.obj['path'] is not None:
-                folder = Path(ctx.obj['path'])
-                folder.mkdir(parents=True, exist_ok=True)
+        if ctx.obj['path'] is not None:
+            path = Path(ctx.obj['path'])
 
             f, i = modf(cost)
             f, i = int(f * 100), int(i)
 
-            figure.savefig(
-                folder /
-                f'{method.__name__}_{len(route) - 1:03d}_{i:04d}_{f:03d}.{ctx.obj["format"]}',
-                format=ctx.obj['format']
-            )
+            if path.suffix == '':
+                folder = path
+                name = f'{method.__name__}_{len(route) - 1:03d}_{i:04d}_{f:03d}.png'
+            else:
+                folder = path.parent
+                name = path.name
+
+            folder.mkdir(parents=True, exist_ok=True)
+
+            figure.savefig(folder / name)
         else:
             plt.show()
 

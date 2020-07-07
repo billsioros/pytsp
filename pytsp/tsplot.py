@@ -44,11 +44,6 @@ from pytsp.core import TravellingSalesman, TravellingSalesmanTimeWindows
     help='the random number generator seed'
 )
 @click.option(
-    '-f', '--format', 'fmt',
-    type=click.STRING, default='png', show_default=True,
-    help='the format of the resulting figure file'
-)
-@click.option(
     '-p', '--path',
     type=click.STRING, default=None,
     help='where to save the resulting figure file'
@@ -69,7 +64,7 @@ def cli(
     ctx,
     depot, cities, metric,
     x_axis, y_axis,
-    random_seed, fmt, path, logging_lvl,
+    random_seed, path, logging_lvl,
     graph
 ):
     """
@@ -96,7 +91,6 @@ def cli(
         'metric': metric,
         'x_axis': x_axis,
         'y_axis': y_axis,
-        'format': fmt,
         'path': path,
         'graph': graph
     }
