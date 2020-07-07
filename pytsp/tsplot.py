@@ -4,7 +4,7 @@ from random import seed, uniform
 
 import click
 
-from pytsp.cli import Dictionary, Timewindow, Method, plot, safe
+from pytsp.cli import Dictionary, Method, Timewindow, plot, safe
 from pytsp.core import TravellingSalesman, TravellingSalesmanTimeWindows
 
 
@@ -60,9 +60,9 @@ from pytsp.core import TravellingSalesman, TravellingSalesmanTimeWindows
     show_default=True
 )
 @click.option(
-    '-v', '--verbose',
-    is_flag=True, default=False,
-    help='enable debugging features'
+    '-g', '--graph',
+    is_flag=True, default=False, show_default=True,
+    help='show a plain graph'
 )
 @click.pass_context
 def cli(
@@ -70,7 +70,7 @@ def cli(
     depot, cities, metric,
     x_axis, y_axis,
     random_seed, fmt, path, logging_lvl,
-    verbose
+    graph
 ):
     """
     Visualization of various `Travelling Salesman` algorithms
@@ -98,21 +98,14 @@ def cli(
         'y_axis': y_axis,
         'format': fmt,
         'path': path,
-        'verbose': verbose
+        'graph': graph
     }
 
-    if verbose is False:
-        logging.basicConfig(
-            format='[%(asctime)s] %(name)s:%(levelname)s: %(message)s',
-            level=logging_lvl,
-            datefmt='%Y-%m-%d %H:%M:%S'
-        )
-    else:
-        logging.basicConfig(
-            format='[%(asctime)s] %(name)s:%(levelname)s: %(message)s',
-            level=logging.DEBUG,
-            datefmt='%Y-%m-%d %H:%M:%S'
-        )
+    logging.basicConfig(
+        format='[%(asctime)s] %(name)s:%(levelname)s: %(message)s',
+        level=logging_lvl,
+        datefmt='%Y-%m-%d %H:%M:%S'
+    )
 
 
 @cli.group(chain=True)

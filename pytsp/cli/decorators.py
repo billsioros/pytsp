@@ -36,10 +36,12 @@ def plot(method):
         plt.text(
             dx - 0.5 if dx < 0 else dx + 0.5,
             dy - 0.5 if dy < 0 else dy + 0.5,
-            f'({dx:05.2f}, {dy:5.2f})', fontsize=10
+            f'({dx:05.2f}, {dy:5.2f})', fontsize=8
         )
 
-        if ctx.obj['verbose'] is True:
+        plt.plot([dx] + xs + [dx], [dy] + ys + [dy], 'k--', label='Route')
+
+        if ctx.obj['graph'] is True:
             for cx, cy in zip(xs, ys):
                 plt.text(
                     cx - 0.5 if cx < 0 else cx + 0.5,
@@ -47,7 +49,9 @@ def plot(method):
                     f'({cx:05.2f}, {cy:5.2f})', fontsize=6
                 )
 
-        plt.plot([dx] + xs + [dx], [dy] + ys + [dy], 'k--', label='Route')
+            plt.axis('off')
+        else:
+            plt.legend()
 
         plt.xlim(
             (ctx.obj['x_axis'][0] - 1) * 1.1,
@@ -60,7 +64,6 @@ def plot(method):
         plt.gca().set_aspect('equal', adjustable='box')
         plt.tight_layout()
         plt.grid()
-        plt.legend()
 
         if ctx.obj['format'] is not None:
             if ctx.obj['path'] is not None:
