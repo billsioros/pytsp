@@ -66,7 +66,7 @@ The project consists of
 ## Installation
 
 <div align="center">
-  <img src="./img/install.png" style="display: block; margin-left: auto; margin-right: auto; width: 80%;"/>
+  <img src="./img/install.png" width="60%"/>
 </div>
 
 ## Introduction
@@ -265,7 +265,7 @@ if __name__ == '__main__':
 **tsplot** offers a way of demonstrating, comparing and chaining different algorithms.
 
 <div align="center">
-  <img src="./img/usage.png" style="display: block; margin-left: auto; margin-right: auto; width: 80%;"/>
+  <img src="./img/usage.png" width="50%"/>
 </div>
 
 ## Theoretical Background
@@ -310,7 +310,7 @@ In fact, the only difference is that, we use the notion of _ellipses_. To be mor
 Now the vertices are not inserted into the partial tour in maximal angle order. Instead, they are inserted in maximal ellipse eccentricity order, which is calculated as such
 
 <div align="center">
-   <img src="./img/misc/eccentricity.png" style="display: block; margin-left: auto; margin-right: auto; width: 40%;"/>
+   <img src="./img/misc/eccentricity.png" width="20%"/>
 </div>
 
 ![alt text](./img/tsplot/eccentricity_020_2125_012.png)
