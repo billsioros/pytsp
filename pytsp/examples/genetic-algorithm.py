@@ -61,10 +61,7 @@ if __name__ == '__main__':
         max_iterations=10000
     )
 
-    individual = ''.join([
-        choice(printable)
-        for _ in range(len(target))
-    ])
+    individual = ''.join([choice(printable) for _ in range(len(target))])
 
     fittest = string_guesser.fit(individual)
 

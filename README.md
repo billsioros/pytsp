@@ -59,7 +59,7 @@ The project consists of
 
 _What are **Traits** ?_
 
-**[Traits](./pytsp/core/misc/trait.py#L33)**, which are implemented as a **[python metaclass](https://realpython.com/python-metaclasses/)**, are at the core of **pytsp** and provide a flexible and frictionless way of modifying the inner workings of the underlying algorithms.
+**[Traits](./pytsp/core/misc/model.py#L33)** provide a flexible and frictionless way of modifying the inner workings of the underlying algorithms.
 
 _Could you guess what the following python code will produce as output ?_
 
@@ -67,15 +67,14 @@ _Could you guess what the following python code will produce as output ?_
 from pytsp import Model
 
 
-class SuperSmartAI(Model):
-    TRAITS = ['greet', ]
+class Greet(Model):
+    class Traits:
+        class Greet:
+            def greetings(self, name):
+                return f'Greetings {self.title}{name}'
 
-    class Greet:
-        def greetings(self, name):
-            return f'Greetings {self.title}.{name}'
-
-        def hello(self, name):
-            return f'Hello {self.title}.{name}'
+            def hello(self, name):
+                return f'Hello {self.title}{name}'
 
     def __init__(self, title, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -83,25 +82,31 @@ class SuperSmartAI(Model):
         self.title = title
 
 
+def good_evening(self, name):
+    return f'Good evening {self.title}{name}'
+
+
 if __name__ == '__main__':
-    ai = SuperSmartAI('Mr')
+    greet = Greet('Mr.', greet='hello')
 
-    ai.greet = SuperSmartAI.Greet.hello
+    print(greet.greet('Sioros'))
 
-    print(ai.greet('Sioros'))
+    greet.title = 'Sir.'
+    greet.greet = 'greetings'
 
-    ai.title = 'Sir'
-    ai.greet = 'greetings'
+    print(greet.greet('Vasileios'))
 
-    print(ai.greet('Vasileios'))
+    greet.title = ''
+    greet.greet = good_evening
+
+    print(greet.greet('Vasilis'))
 ```
 
 If you answered
 
-```bash
-Hello Mr.Sioros
-Greetings Sir.Vasileios
-```
+  Hello Mr.Sioros
+  Greetings Sir.Vasileios
+  Good evening Vasilis
 
 you have earned yourself a cookie !
 
@@ -119,10 +124,10 @@ from random import uniform
 from pytsp import TravellingSalesman
 
 if __name__ == '__main__':
-    X_AXIS, Y_AXIS = (-50, +50), (-50, +50)
+    x_axis, y_axis = (-50, +50), (-50, +50)
 
     cities = [
-        (uniform(X_AXIS[0], X_AXIS[1]), uniform(Y_AXIS[0], Y_AXIS[1]))
+        (uniform(x_axis[0], x_axis[1]), uniform(y_axis[0], y_axis[1]))
         for i in range(10)
     ]
 
@@ -142,25 +147,26 @@ from pytsp import SimulatedAnnealing
 
 
 class Sort(SimulatedAnnealing):
-    class Mutate:
-        def shift_1(self, elements):
-            neighbor = elements[:]
+    class Traits:
+        class Mutate:
+            def shift_1(self, elements):
+                neighbor = elements[:]
 
-            i = randrange(0, len(elements))
-            j = randrange(0, len(elements))
+                i = randrange(0, len(elements))
+                j = randrange(0, len(elements))
 
-            neighbor.insert(j, neighbor.pop(i))
+                neighbor.insert(j, neighbor.pop(i))
 
-            return neighbor
+                return neighbor
 
-    class Cost:
-        def ordered(self, individual):
-            mispositioned = 0
-            for i in range(0, len(individual) - 1):
-                for j in range(i + 1, len(individual)):
-                    mispositioned += individual[i] > individual[j]
+        class Cost:
+            def ordered(self, individual):
+                mispositioned = 0
+                for i in range(0, len(individual) - 1):
+                    for j in range(i + 1, len(individual)):
+                        mispositioned += individual[i] > individual[j]
 
-            return mispositioned
+                return mispositioned
 
 
 if __name__ == '__main__':
@@ -183,33 +189,34 @@ from pytsp import GeneticAlgorithm
 
 
 class GuessString(GeneticAlgorithm):
-    class Mutate:
-        def randomize(self, individual):
-            return ''.join([
-                choice(printable)
-                if random() < self.per_character_mutation_probability
-                else individual[i]
-                for i in range(len(individual))
-            ])
+    class Traits:
+        class Mutate:
+            def randomize(self, individual):
+                return ''.join([
+                    choice(printable)
+                    if random() < self.per_character_mutation_probability
+                    else individual[i]
+                    for i in range(len(individual))
+                ])
 
-    class Crossover:
-        def cut_and_stitch(self, individual_a, individual_b):
-            left = individual_a[:len(individual_a) // 2]
-            right = individual_b[len(individual_b) // 2:]
+        class Crossover:
+            def cut_and_stitch(self, individual_a, individual_b):
+                left = individual_a[:len(individual_a) // 2]
+                right = individual_b[len(individual_b) // 2:]
 
-            return left + right
+                return left + right
 
-    class Select:
-        def random_top_half(self, population):
-            return population[randrange(0, len(population) // 2)]
+        class Select:
+            def random_top_half(self, population):
+                return population[randrange(0, len(population) // 2)]
 
-    class Fitness:
-        def least_squares(self, individual):
-            squared_sum = 0
-            for i in range(len(self.target)):
-                squared_sum += (ord(individual[i]) - ord(self.target[i])) ** 2
+        class Fitness:
+            def least_squares(self, individual):
+                squared_sum = 0
+                for i in range(len(self.target)):
+                    squared_sum += (ord(individual[i]) - ord(self.target[i])) ** 2
 
-            return 1 / (squared_sum + 1)
+                return 1 / (squared_sum + 1)
 
     def __init__(self, target, *args, per_character_mutation_probability=0.1, **kwargs):
         super().__init__(*args, **kwargs)
