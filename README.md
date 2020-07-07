@@ -32,7 +32,7 @@
       - [Simulated Annealing](#simulated-annealing)
       - [Compressed Annealing](#compressed-annealing)
     - [A Comprehensive Study of the Travelling Salesman Problem](#a-comprehensive-study-of-the-travelling-salesman-problem)
-  - [LICENSE](#license)
+  - [License](#license)
 
 ## Purpose
 
@@ -398,7 +398,7 @@ _The results presented can be reproduced by running `tsplot -c 20 -s 2 -g [CLASS
 
 For a more exhaustive analysis of the problem and the algorithms presented, feel free to check out our [paper](https://github.com/billsioros/computational-geometry/blob/master/Project/report/report.pdf).
 
-## LICENSE
+## License
 
 <img align="right" src="http://opensource.org/trademarks/opensource/OSI-Approved-License-100x137.png">
 
