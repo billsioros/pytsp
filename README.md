@@ -268,9 +268,19 @@ if __name__ == '__main__':
 
 _Special thanks to [Andrinopoulou Christina](https://github.com/ChristinaAndrinopoyloy) for her major contribution in the theoretical research of the problem._
 
+_In the following sections the terms `path`, `tour`, `route` are used interchangeably_
+
 ### Greedy Approaches
 
 #### Nearest Neighbor Search
+
+1. Initialize all vertices as unvisited.
+2. Select an arbitrary vertex, set it as the current vertex and mark as visited.
+3. Find out the shortest edge connecting the current vertex and an unvisited vertex.
+4. Set the unvisited vertex as the current vertex and mark it as visited.
+5. If all the vertices in the domain are visited, then terminate. Otherwise, go to step 3.
+
+The sequence of the visited vertices is the output of the algorithm.
 
 ![alt text](./img/tsplot/nearest_neighbor_020_7199_051.png)
 
@@ -278,9 +288,24 @@ _Special thanks to [Andrinopoulou Christina](https://github.com/ChristinaAndrino
 
 #### Angle Comparison
 
+1. Given a set of vertices, construct a partial tour consisting of the convex hull of the set and set the vertices that the convex hull is consisting of as visited.
+2. While there are unvisited vertices do the following
+   1. Given triplets of the form (_a_, _b_, _c_), where _a_ and _c_ correspond to consecutive vertices of the partial tour and _b_ to an unvisited vertex, calculate every angle that is formed by such a triplet.
+   2. Find the triplet, corresponding to the maximal angle value, and insert the unvisited vertex belonging to the triplet between the consecutive vertices of the partial tour that belong in the triplet.
+
+Yet again, the sequence of the visited vertices is the output of the algorithm.
+
 ![alt text](./img/tsplot/angle_020_3349_085.png)
 
 #### Eccentricity Comparison
+
+This algorithm is quite similar to the angle comparison method mentioned above.
+
+In fact, the only difference is that, we use the notion of _ellipses_. To be more specific, triplets of the aforementioned structure are formed, in each iteration of the algorithm, such that vertices _a_ and _c_ are the focal points of the ellipse and vertex _b_ intersects with the ellipse at hand.
+
+Now the vertices are not inserted into the partial tour in maximal angle order. Instead, they are inserted in maximal ellipse eccentricity order, which is calculated as such
+
+<img src="./img/misc/eccentricity.png" style="display: block; margin-left: auto; margin-right: auto; width: 40%;"/>
 
 ![alt text](./img/tsplot/eccentricity_020_2125_012.png)
 
@@ -288,22 +313,80 @@ _Special thanks to [Andrinopoulou Christina](https://github.com/ChristinaAndrino
 
 #### 2-opt
 
+The main idea behind it is to take a route that crosses over itself and reorder it so that it does not.
+
+Given a route of length `n`, i.e. an ordering of the vertices, the 2-opt swapping mechanism performs the following
+
+1. Initialize _new_route_ to be a new empty route.
+2. Take the elements from index `0` to index `i - 1` and add them in order to _new_route_.
+3. Take the elements from index `i` to index `k` and add them in reverse order to _new_route_.
+4. Take the elements from index `k + 1` to `n` and add them in order to _new_route_
+5. Return _new_route_ as a new candidate route
+
+The actual algorithm utilizing the mechanism explained above performs the following
+
+1. Assign the initially provided route as the best found route
+2. Until no better solution can be found
+   1. Calculate the cost of the best found route
+   2. For every possible pair `(i, k)`
+      1. Find a new candidate route, using the 2-opt swapping mechanism
+      2. Calculate the candidate route's cost
+      3. If the candidate route' cost is smaller than the cost of the best route thus far, restart the whole procedure, with the candidate route as the initially provided route.
+   3. If the set of possible `(i, k)` pairs is exhausted, return the best found route.
+
 ![alt text](./img/tsplot/opt_2_020_2303_056.png)
 
 ### Meta-heuristic Approaches
 
+_In this section, only a high level overview of the algorithms is going to be provided, as the exact steps of each algorithm are of miniscule importance, when compared to the mechanisms performing the `mutatation`, `selection`, `crossover`, `fitness` assessment, e.t.c of individuals._
+
+_The mechanisms concerning the **Travelling Salesman Problem** are self explanatory and provide a solid start in tackling other combinatorial optimization problems_
+
 #### Genetic Algorithm
+
+Given an individual, the genetic algorithm performs the following
+
+1. Generate the initial generation of `n` individuals, by means of mutation on the provided individual
+2. While the maximum number of iterations has not been reached
+   1. Calculate the fitness of all individuals belonging to the current generation
+   2. If an individual with a fitness value higher than the one of the fittest individual thus far exists, assign it as the fittest individual
+   3. If the fitness of the fittest individual thus far exceeds the fitness threshold, return it.
+   4. Otherwise, until the next generation contains `n` individuals
+      1. Select 2 individuals belonging to the current generation
+      2. Cross them over in order to produce an offspring
+      3. Probabilistically mutate the offspring
+      4. Add the offspring to the next generation
+3. Return the fittest individual
 
 ![alt text](./img/tsplot/genetic_algorithm_020_2468_040.png)
 
 #### Simulated Annealing
 
+Given an initial solution, a cooling rate and an initial temperature, the simulated annealing heuristic performs the following
+
+1. Let the current solution be the initial solution as well as the best solution so far
+2. While the maximum number of iterations has not been reached and the current temperature is greater than 0
+   1. Generate a new candidate solution and calculate its cost
+   2. Probabilistically decide to accept the candidate solution as the current solution whilst taking into consideration the temperature, the current solution's cost as well as the candidate solution's cost
+   3. If the candidate solution's cost is smaller than the best so far solution's cost, assign the candidate as the best found solution thus far
+   4. Increase the number of iteration by 1
+   5. Reduce the temperature by a factor of 1 - cooling rate
+3. Return the best found solution
+
 ![alt text](./img/tsplot/simulated_annealing_020_2686_037.png)
 
 #### Compressed Annealing
 
+_A variant of Simulated Annealing incorporating a variable penalty method to solve the **Travelling Salesman Problem with Time Windows**. Augmenting temperature from traditional Simulated Annealing with the concept of pressure (analogous to the value of the penalty multiplier), compressed annealing relaxes the time-window constraints by integrating a penalty method within a stochastic search procedure._
+
+Sadly, `Compressed Annealing` can not be presented in the context of a brief theoretical overview, as it is indeed quite complex.
+
+For anyone interested in achieving a greater theoretical understanding of the algorithm, I advise you to study the original [paper](https://www.researchgate.net/publication/220669433_A_Compressed-Annealing_Heuristic_for_the_Traveling_Salesman_Problem_with_Time_Windows) by `Jeffrey W. Ohlmann` and `Barrett W. Thomas` (_Department of Management Sciences, University of Iowa_).
+
 ![alt text](./img/tsplot/compressed_annealing_020_3051_012.png)
+
+_The results presented can be reproduced by running `tsplot -c 20 -s 2 -g [CLASS][ALGORITHM]`
 
 ### A Comprehensive Study of the Travelling Salesman Problem
 
-For a more exhaustive analysis of the problem, feel free to check out our [paper](https://github.com/billsioros/computational-geometry/blob/master/Project/report/report.pdf).
+For a more exhaustive analysis of the problem and the algorithms presented, feel free to check out our [paper](https://github.com/billsioros/computational-geometry/blob/master/Project/report/report.pdf).
