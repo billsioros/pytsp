@@ -66,6 +66,8 @@ def plot(method):
         plt.grid()
 
         if ctx.obj['format'] is not None:
+            folder = Path.cwd()
+
             if ctx.obj['path'] is not None:
                 folder = Path(ctx.obj['path'])
                 folder.mkdir(parents=True, exist_ok=True)
