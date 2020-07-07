@@ -2,11 +2,22 @@
 from logging import getLogger
 from random import random
 
-from pytsp.core.misc import Trait
+from pytsp.core.misc import Model
 
 
-class GeneticAlgorithm(Trait):
-    TRAITS = {'mutate', 'crossover', 'fitness', 'select'}
+class GeneticAlgorithm(Model):
+    class Traits(Model.Traits):
+        class Mutate:
+            pass
+
+        class Crossover:
+            pass
+
+        class Fitness:
+            pass
+
+        class Select:
+            pass
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)

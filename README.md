@@ -1,7 +1,7 @@
 <p align="center">
   <img src="https://img.shields.io/badge/license-MIT-blue"/>
   <img src="https://img.shields.io/badge/python-3.8-blue"/>
-  <img src="https://img.shields.io/badge/version-1.2-blue"/>
+  <img src="https://img.shields.io/badge/version-0.8-blue"/>
   <img src="https://img.shields.io/badge/build-passing-green"/>
   <img src="https://img.shields.io/badge/maintained-yes-green"/>
   <img src="https://img.shields.io/badge/status-development-yellow"/>
@@ -64,10 +64,10 @@ _What are **Traits** ?_
 _Could you guess what the following python code will produce as output ?_
 
 ```python
-from pytsp import Trait
+from pytsp import Model
 
 
-class SuperSmartAI(Trait):
+class SuperSmartAI(Model):
     TRAITS = ['greet', ]
 
     class Greet:

@@ -1,38 +1,37 @@
 
-from pytsp import Trait
+from pytsp import Model
 
 
-class Greet(Trait):
-    TRAITS = ['greet', ]
+class Greet(Model):
+    class Traits:
+        class Greet:
+            def greetings(self, name):
+                return f'Greetings {self.title}{name}'
 
-    class Greet:
-        def greetings(self):
-            return f'Greetings {self.name}'
+            def hello(self, name):
+                return f'Hello {self.title}{name}'
 
-        def hello(self):
-            return f'Hello {self.name}'
-
-        def good_evening(self):
-            return f'Good evening {self.name}'
-
-    def __init__(self, name, *args, **kwargs):
+    def __init__(self, title, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
-        self.name = name
+        self.title = title
 
-    def __call__(self):
-        return self.greet()
+
+def good_evening(self, name):
+    return f'Good evening {self.title}{name}'
 
 
 if __name__ == '__main__':
-    greet = Greet('Vasilis', greet='hello')
+    greet = Greet('Mr.', greet='hello')
 
-    print(greet())
+    print(greet.greet('Sioros'))
 
+    greet.title = 'Sir.'
     greet.greet = 'greetings'
 
-    print(greet())
+    print(greet.greet('Vasileios'))
 
-    greet.greet = Greet.Greet.good_evening
+    greet.title = ''
+    greet.greet = good_evening
 
-    print(greet())
+    print(greet.greet('Vasilis'))

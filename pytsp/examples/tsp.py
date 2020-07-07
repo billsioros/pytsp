@@ -6,10 +6,10 @@ import matplotlib.pyplot as plt
 from pytsp import TravellingSalesman
 
 if __name__ == '__main__':
-    X_AXIS, Y_AXIS = (-50, +50), (-50, +50)
+    x_axis, y_axis = (-50, +50), (-50, +50)
 
     cities = [
-        (uniform(X_AXIS[0], X_AXIS[1]), uniform(Y_AXIS[0], Y_AXIS[1]))
+        (uniform(x_axis[0], x_axis[1]), uniform(y_axis[0], y_axis[1]))
         for i in range(10)
     ]
 
@@ -37,8 +37,8 @@ if __name__ == '__main__':
 
     plt.plot([dx] + xs + [dx], [dy] + ys + [dy], 'k--', label='Route')
 
-    plt.xlim((X_AXIS[0] - 1) * 1.1, (X_AXIS[1] + 1) * 1.1)
-    plt.ylim((Y_AXIS[0] - 1) * 1.1, (Y_AXIS[1] + 1) * 1.1)
+    plt.xlim((x_axis[0] - 1) * 1.1, (x_axis[1] + 1) * 1.1)
+    plt.ylim((y_axis[0] - 1) * 1.1, (y_axis[1] + 1) * 1.1)
 
     plt.gca().set_aspect('equal', adjustable='box')
     plt.tight_layout()

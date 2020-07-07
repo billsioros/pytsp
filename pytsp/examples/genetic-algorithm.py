@@ -7,33 +7,34 @@ from pytsp import GeneticAlgorithm
 
 
 class GuessString(GeneticAlgorithm):
-    class Mutate:
-        def randomize(self, individual):
-            return ''.join([
-                choice(printable)
-                if random() < self.per_character_mutation_probability
-                else individual[i]
-                for i in range(len(individual))
-            ])
+    class Traits:
+        class Mutate:
+            def randomize(self, individual):
+                return ''.join([
+                    choice(printable)
+                    if random() < self.per_character_mutation_probability
+                    else individual[i]
+                    for i in range(len(individual))
+                ])
 
-    class Crossover:
-        def cut_and_stitch(self, individual_a, individual_b):
-            left = individual_a[:len(individual_a) // 2]
-            right = individual_b[len(individual_b) // 2:]
+        class Crossover:
+            def cut_and_stitch(self, individual_a, individual_b):
+                left = individual_a[:len(individual_a) // 2]
+                right = individual_b[len(individual_b) // 2:]
 
-            return left + right
+                return left + right
 
-    class Select:
-        def random_top_half(self, population):
-            return population[randrange(0, len(population) // 2)]
+        class Select:
+            def random_top_half(self, population):
+                return population[randrange(0, len(population) // 2)]
 
-    class Fitness:
-        def least_squares(self, individual):
-            squared_sum = 0
-            for i in range(len(self.target)):
-                squared_sum += (ord(individual[i]) - ord(self.target[i])) ** 2
+        class Fitness:
+            def least_squares(self, individual):
+                squared_sum = 0
+                for i in range(len(self.target)):
+                    squared_sum += (ord(individual[i]) - ord(self.target[i])) ** 2
 
-            return 1 / (squared_sum + 1)
+                return 1 / (squared_sum + 1)
 
     def __init__(self, target, *args, per_character_mutation_probability=0.1, **kwargs):
         super().__init__(*args, **kwargs)

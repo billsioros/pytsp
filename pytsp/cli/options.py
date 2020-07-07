@@ -1,7 +1,6 @@
 
-from inspect import getmembers, isfunction
-
 from click import Choice, Tuple
+from inspect import getmembers, isfunction
 
 
 class Dictionary(Choice):
@@ -45,15 +44,14 @@ class Timewindow(Tuple):
         return hours * 3600 + minutes * 60
 
 
-class Trait(Choice):
-    name = 'trait'
+class Method(Choice):
+    name = 'method'
 
     def __init__(self, cls, case_sensitive=False):
         super().__init__(
             [
-                name
+                name.lower()
                 for name, _ in getmembers(cls, predicate=isfunction)
-                if not name.startswith("_")
             ],
             case_sensitive=case_sensitive
         )

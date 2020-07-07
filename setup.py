@@ -1,7 +1,6 @@
 
 from os import path
 from pathlib import Path
-from subprocess import check_output
 
 from setuptools import find_packages, setup
 
@@ -13,24 +12,9 @@ with open(path.join(cwd, 'README.md'), encoding='utf-8') as file:
 with open(path.join(cwd, 'requirements.txt'), encoding='utf-8') as file:
     requirements = list(filter(lambda x: x != '', file.read().split('\n')))
 
-COMMIT_COUNT = len(check_output(
-        [
-            'git',
-            'log',
-            'master',
-            '--pretty=oneline'
-        ]
-    ).strip().split(b'\n')
-)
-
-COMMIT_COUNT = f'{COMMIT_COUNT:02d}'
-
-MAJOR = COMMIT_COUNT[0]
-MINOR = COMMIT_COUNT[1]
-
 setup(
     name='pytsp',
-    version=f'{MAJOR}.{MINOR}',
+    version='0.8',
 
     packages=find_packages(),
     include_package_data=True,

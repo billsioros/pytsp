@@ -6,25 +6,26 @@ from pytsp import SimulatedAnnealing
 
 
 class Sort(SimulatedAnnealing):
-    class Mutate:
-        def shift_1(self, elements):
-            neighbor = elements[:]
+    class Traits:
+        class Mutate:
+            def shift_1(self, elements):
+                neighbor = elements[:]
 
-            i = randrange(0, len(elements))
-            j = randrange(0, len(elements))
+                i = randrange(0, len(elements))
+                j = randrange(0, len(elements))
 
-            neighbor.insert(j, neighbor.pop(i))
+                neighbor.insert(j, neighbor.pop(i))
 
-            return neighbor
+                return neighbor
 
-    class Cost:
-        def ordered(self, individual):
-            mispositioned = 0
-            for i in range(0, len(individual) - 1):
-                for j in range(i + 1, len(individual)):
-                    mispositioned += individual[i] > individual[j]
+        class Cost:
+            def ordered(self, individual):
+                mispositioned = 0
+                for i in range(0, len(individual) - 1):
+                    for j in range(i + 1, len(individual)):
+                        mispositioned += individual[i] > individual[j]
 
-            return mispositioned
+                return mispositioned
 
 
 if __name__ == '__main__':

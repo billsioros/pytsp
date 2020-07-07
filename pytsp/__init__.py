@@ -5,10 +5,10 @@ pytsp - The Travelling Salesman (with Time Windows)
 >>> from random import seed, uniform
 >>> from core import TravellingSalesman
 
->>> X_AXIS, Y_AXIS = (-50, +50), (-50, +50)
+>>> x_axis, y_axis = (-50, +50), (-50, +50)
 
 >>> cities = [
-    (uniform(X_AXIS[0], X_AXIS[1]), uniform(Y_AXIS[0], Y_AXIS[1]))
+    (uniform(x_axis[0], x_axis[1]), uniform(y_axis[0], y_axis[1]))
     for i in range(10)
 ]
 
@@ -21,7 +21,7 @@ pytsp - The Travelling Salesman (with Time Windows)
 __author__ = "Vasileios Sioros (billsioros)"
 __copyright__ = "Copyright 2020, Vasileios Sioros (billsioros)"
 __credits__ = [
-    "Vasileios Sioros",
+    "Vasileios Sioros (billsioros)",
 ]
 __license__ = "MIT License"
 __version__ = "0.8"
@@ -34,7 +34,7 @@ __all__ = [
     'CompressedAnnealing',
     'SimulatedAnnealing',
     'GeneticAlgorithm',
-    'Trait',
+    'Model',
     'cached',
     'jarvis',
     'TravellingSalesman',
@@ -42,5 +42,5 @@ __all__ = [
 ]
 
 from pytsp.core import (AnnealingMixin, CompressedAnnealing, GeneticAlgorithm,
-                  SimulatedAnnealing, Trait, TravellingSalesman,
-                  TravellingSalesmanTimeWindows, cached, jarvis)
+                        Model, SimulatedAnnealing, TravellingSalesman,
+                        TravellingSalesmanTimeWindows, cached, jarvis)

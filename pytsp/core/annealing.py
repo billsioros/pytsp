@@ -3,10 +3,17 @@ from logging import getLogger
 from math import exp, log
 from random import random
 
-from pytsp.core.misc import Trait
+from pytsp.core.misc import Model
 
 
-class AnnealingMixin:
+class AnnealingMixin(Model):
+    class Traits(Model.Traits):
+        class Mutate:
+            pass
+
+        class Cost:
+            pass
+
     def acceptance_probability(self, current_cost, candidate_cost, temperature):
         if candidate_cost < current_cost:
             return 1
@@ -14,8 +21,9 @@ class AnnealingMixin:
             return exp((current_cost - candidate_cost) / temperature)
 
 
-class SimulatedAnnealing(Trait, AnnealingMixin):
-    TRAITS = {'mutate', 'cost'}
+class SimulatedAnnealing(AnnealingMixin):
+    class Traits(AnnealingMixin.Traits):
+        pass
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -61,8 +69,10 @@ class SimulatedAnnealing(Trait, AnnealingMixin):
         return best, best_cost
 
 
-class CompressedAnnealing(Trait, AnnealingMixin):
-    TRAITS = {'mutate', 'cost', 'penalty'}
+class CompressedAnnealing(AnnealingMixin):
+    class Traits(AnnealingMixin.Traits):
+        class Penalty:
+            pass
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)

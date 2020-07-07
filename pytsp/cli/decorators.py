@@ -1,6 +1,7 @@
 
 from functools import wraps
 
+
 def plot(method):
     from matplotlib import pyplot as plt
     from pathlib import Path
@@ -85,13 +86,13 @@ def plot(method):
 def safe(method):
     from click import echo, style
 
-    @wraps(method)
-    def wrapper(*args, **kwargs):
-        try:
-            return method(*args, **kwargs)
-        except Exception as e:
-            name = method.__name__.replace("_", " ").title()
-            echo(style(f"{name}: ", bold=True) + str(e))
-            exit(1)
+    # @wraps(method)
+    # def wrapper(*args, **kwargs):
+    #     try:
+    #         return method(*args, **kwargs)
+    #     except Exception as e:
+    #         name = method.__name__.replace("_", " ").title()
+    #         echo(style(f"{name}: ", bold=True) + str(e))
+    #         exit(1)
 
-    return wrapper
+    return method

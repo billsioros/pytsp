@@ -4,7 +4,7 @@ from random import seed, uniform
 
 import click
 
-from pytsp.cli import Dictionary, Timewindow, Trait, plot, safe
+from pytsp.cli import Dictionary, Timewindow, Method, plot, safe
 from pytsp.core import TravellingSalesman, TravellingSalesmanTimeWindows
 
 
@@ -22,7 +22,7 @@ from pytsp.core import TravellingSalesman, TravellingSalesmanTimeWindows
 )
 @click.option(
     '-m', '--metric',
-    type=Trait(TravellingSalesman.Metric), default='euclidean',
+    type=Method(TravellingSalesman.Traits.Metric), default='euclidean',
     help='the distance metric to be used',
     show_default=True
 )
@@ -176,7 +176,7 @@ for group in [tsp, tsptw]:
     @group.command()
     @click.option(
         '-c', '--criterion',
-        type=Trait(TravellingSalesman.Criterion), default='eccentricity',
+        type=Method(TravellingSalesman.Traits.Criterion), default='eccentricity',
         help='the criterion for choosing which city to integrate next into the partial tour',
         show_default=True
     )
@@ -199,7 +199,7 @@ for group in [tsp, tsptw]:
     @group.command()
     @click.option(
         '-m', '--mutate',
-        type=Trait(TravellingSalesman.Mutate), default='shift-1',
+        type=Method(TravellingSalesman.Traits.Mutate), default='shift-1',
         help='the mutation function to be used',
         show_default=True
     )
@@ -231,7 +231,7 @@ for group in [tsptw]:
     @group.command()
     @click.option(
         '-m', '--mutate',
-        type=Trait(TravellingSalesman.Mutate), default='shift_1',
+        type=Method(TravellingSalesman.Traits.Mutate), default='shift_1',
         help='the mutation function to be used',
         show_default=True
     )
@@ -306,31 +306,31 @@ for group in [tsp, tsptw]:
     @group.command()
     @click.option(
         '-m', '--mutate',
-        type=Trait(TravellingSalesman.Mutate), default='shift-1',
+        type=Method(TravellingSalesman.Traits.Mutate), default='shift-1',
         help='the mutation function to be used',
         show_default=True
     )
     @click.option(
         '-c', '--crossover',
-        type=Trait(TravellingSalesman.Crossover), default='cut_and_stitch',
+        type=Method(TravellingSalesman.Traits.Crossover), default='cut_and_stitch',
         help='the crossover function to be used',
         show_default=True
     )
     @click.option(
         '-s', '--select',
-        type=Trait(TravellingSalesman.Select), default='random_top_half',
+        type=Method(TravellingSalesman.Traits.Select), default='random_top_half',
         help='the selection function to be used',
         show_default=True
     )
     @click.option(
         '-h', '--heuristic',
-        type=Trait(TravellingSalesman.Heuristic), default='kruskal',
+        type=Method(TravellingSalesman.Traits.Heuristic), default='kruskal',
         help='the heuristic to be used in the calculation of the fitness',
         show_default=True
     )
     @click.option(
         '-f', '--fitness',
-        type=Trait(TravellingSalesman.Fitness), default='weighted_mst',
+        type=Method(TravellingSalesman.Traits.Fitness), default='weighted_mst',
         help='the function determining the fitness of an individual',
         show_default=True
     )
