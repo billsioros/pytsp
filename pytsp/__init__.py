@@ -18,16 +18,16 @@ pytsp - The Travelling Salesman (with Time Windows)
 >>> route, cost = tsp.nearest_neighbor(depot, cities)
 """
 
-__author__ = "Vasileios Sioros (billsioros)"
-__copyright__ = "Copyright 2020, Vasileios Sioros (billsioros)"
+__author__ = 'Vasileios Sioros (billsioros)'
+__copyright__ = 'Copyright 2020, Vasileios Sioros (billsioros)'
 __credits__ = [
-    "Vasileios Sioros (billsioros)",
+    'Vasileios Sioros (billsioros)',
 ]
-__license__ = "MIT License"
-__version__ = "0.8"
-__maintainer__ = "Vasileios Sioros"
-__email__ = "billsioros97@gmail.com"
-__status__ = "Development"
+__license__ = 'MIT License'
+__version__ = '0.8'
+__maintainer__ = 'Vasileios Sioros'
+__email__ = 'billsioros97@gmail.com'
+__status__ = 'Development'
 
 __all__ = [
     'AnnealingMixin',
