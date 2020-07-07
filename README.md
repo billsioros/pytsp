@@ -65,7 +65,9 @@ The project consists of
 
 ## Installation
 
-<img src="./img/install.png" style="display: block; margin-left: auto; margin-right: auto; width: 80%;"/>
+<div align="center">
+  <img src="./img/install.png" style="display: block; margin-left: auto; margin-right: auto; width: 80%;"/>
+</div>
 
 ## Introduction
 
@@ -262,7 +264,9 @@ if __name__ == '__main__':
 
 **tsplot** offers a way of demonstrating, comparing and chaining different algorithms.
 
-<img src="./img/usage.png" style="display: block; margin-left: auto; margin-right: auto; width: 80%;"/>
+<div align="center">
+  <img src="./img/usage.png" style="display: block; margin-left: auto; margin-right: auto; width: 80%;"/>
+</div>
 
 ## Theoretical Background
 
@@ -305,7 +309,9 @@ In fact, the only difference is that, we use the notion of _ellipses_. To be mor
 
 Now the vertices are not inserted into the partial tour in maximal angle order. Instead, they are inserted in maximal ellipse eccentricity order, which is calculated as such
 
-<img src="./img/misc/eccentricity.png" style="display: block; margin-left: auto; margin-right: auto; width: 40%;"/>
+<div align="center">
+   <img src="./img/misc/eccentricity.png" style="display: block; margin-left: auto; margin-right: auto; width: 40%;"/>
+</div>
 
 ![alt text](./img/tsplot/eccentricity_020_2125_012.png)
 
@@ -385,7 +391,7 @@ For anyone interested in achieving a greater theoretical understanding of the al
 
 ![alt text](./img/tsplot/compressed_annealing_020_3051_012.png)
 
-_The results presented can be reproduced by running `tsplot -c 20 -s 2 -g [CLASS][ALGORITHM]`
+_The results presented can be reproduced by running `tsplot -c 20 -s 2 -g [CLASS][ALGORITHM]`_
 
 ### A Comprehensive Study of the Travelling Salesman Problem
 
