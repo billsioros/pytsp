@@ -22,7 +22,7 @@
   - [Theoretical Background](#theoretical-background)
     - [Greedy Approaches](#greedy-approaches)
       - [Nearest Neighbor Search](#nearest-neighbor-search)
-    - [Convex hull / Geometric Approaches](#convex-hull--geometric-approaches)
+    - [Geometric Approaches](#geometric-approaches)
       - [Angle Comparison](#angle-comparison)
       - [Eccentricity Comparison](#eccentricity-comparison)
     - [Local Search Approaches](#local-search-approaches)
@@ -51,7 +51,7 @@ The project consists of
 - the **[pytsp](./pytsp/)** library, which provides different approaches in tackling the Travelling Salesman Problem (with and without Time Windows). These include
   - Greedy approaches
     - [Nearest Neighbor Search](./pytsp/core/tsp.py#L118)
-  - Convex hull / Geometric approaches
+  - Geometric approaches
     - [Angle Comparison](./pytsp/core/tsp.py#L151)
     - [Eccentricity Comparison](./pytsp/core/tsp.py#L151)
   - Local Search approaches
@@ -274,7 +274,7 @@ _Special thanks to [Andrinopoulou Christina](https://github.com/ChristinaAndrino
 
 ![alt text](./img/tsplot/nearest_neighbor_020_7199_051.png)
 
-### Convex hull / Geometric Approaches
+### Geometric Approaches
 
 #### Angle Comparison
 
