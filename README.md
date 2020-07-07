@@ -73,7 +73,7 @@ The project consists of
 
 _What is a **Model** ?_
 
-A **[Model](./pytsp/core/misc/model.py#L41)**, in the context of **pytsp**, describes a set of distinctive qualities (_traits_) of each algorithm that can be inherited and / or assigned.
+A **[Model](./pytsp/core/misc/model.py#L41)** describes a set of distinctive qualities (_traits_) of each algorithm that can be inherited and / or assigned.
 
 _What are **Traits** ?_
 
