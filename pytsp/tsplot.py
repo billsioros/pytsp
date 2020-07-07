@@ -45,7 +45,7 @@ from pytsp.core import TravellingSalesman, TravellingSalesmanTimeWindows
 )
 @click.option(
     '-f', '--format', 'fmt',
-    type=click.STRING, default=None,
+    type=click.STRING, default='png', show_default=True,
     help='the format of the resulting figure file'
 )
 @click.option(
