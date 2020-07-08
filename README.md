@@ -298,7 +298,9 @@ _In the following sections the terms `path`, `tour`, `route` are used interchang
 
 The sequence of the visited vertices is the output of the algorithm.
 
-![alt text](./img/tsplot/single/nearest_neighbor_020_7199_051.png)
+<div align="center">
+  <img src="./img/tsplot/single/nearest_neighbor_020_7199_051.png"/>
+</div>
 
 ### Geometric Approaches
 
@@ -311,7 +313,9 @@ The sequence of the visited vertices is the output of the algorithm.
 
 Yet again, the sequence of the visited vertices is the output of the algorithm.
 
-![alt text](./img/tsplot/single/angle_020_3349_085.png)
+<div align="center">
+  <img src="./img/tsplot/single/angle_020_3349_085.png"/>
+</div>
 
 #### Eccentricity Comparison
 
@@ -325,7 +329,9 @@ Now the vertices are not inserted into the partial tour in maximal angle order. 
    <img src="./img/misc/eccentricity.png" width="22%"/>
 </div>
 
-![alt text](./img/tsplot/single/eccentricity_020_2125_012.png)
+<div align="center">
+  <img src="./img/tsplot/single/eccentricity_020_2125_012.png"/>
+</div>
 
 ### Local Search Approaches
 
@@ -352,7 +358,9 @@ The actual algorithm utilizing the mechanism explained above performs the follow
       3. If the candidate route' cost is smaller than the cost of the best route thus far, restart the whole procedure, with the candidate route as the initially provided route.
    3. If the set of possible `(i, k)` pairs is exhausted, return the best found route.
 
-![alt text](./img/tsplot/single/opt_2_020_2303_056.png)
+<div align="center">
+  <img src="./img/tsplot/single/opt_2_020_2303_056.png"/>
+</div>
 
 ### Meta-heuristic Approaches
 
@@ -376,7 +384,9 @@ Given an individual, the genetic algorithm performs the following
       4. Add the offspring to the next generation
 3. Return the fittest individual
 
-![alt text](./img/tsplot/single/genetic_algorithm_020_2468_040.png)
+<div align="center">
+  <img src="./img/tsplot/single/genetic_algorithm_020_2468_040.png"/>
+</div>
 
 #### Simulated Annealing
 
@@ -391,7 +401,9 @@ Given an initial solution, a cooling rate and an initial temperature, the simula
    5. Reduce the temperature by a factor of 1 - cooling rate
 3. Return the best found solution
 
-![alt text](./img/tsplot/single/simulated_annealing_020_2686_037.png)
+<div align="center">
+  <img src="./img/tsplot/single/simulated_annealing_020_2686_037.png"/>
+</div>
 
 #### Compressed Annealing
 
@@ -401,7 +413,9 @@ Sadly, `Compressed Annealing` can not be presented in the context of a brief the
 
 For anyone interested in achieving a greater theoretical understanding of the algorithm, I advise you to study the original [paper](https://www.researchgate.net/publication/220669433_A_Compressed-Annealing_Heuristic_for_the_Traveling_Salesman_Problem_with_Time_Windows) by `Jeffrey W. Ohlmann` and `Barrett W. Thomas` (_Department of Management Sciences, University of Iowa_).
 
-![alt text](./img/tsplot/single/compressed_annealing_020_3051_012.png)
+<div align="center">
+  <img src="./img/tsplot/single/compressed_annealing_020_3051_012.png"/>
+</div>
 
 _The results presented can be reproduced by running `tsplot -c 20 -s 2 -g [CLASS][ALGORITHM]`_
 
