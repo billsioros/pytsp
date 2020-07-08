@@ -282,9 +282,9 @@ _We are going to focus on `chaining` different algorithms, as simpler cases are 
 #### Nearest Neighbor, Simulated Annealing and 2-Opt
 
 <div align="center">
-  <img src="./img/tsplot/multiple/1/nearest_neighbor_019_3801_072.png" width="50%"/>
-  <img src="./img/tsplot/multiple/1/simulated_annealing_019_3276_012.png" width="50%"/>
-  <img src="./img/tsplot/multiple/1/opt_2_019_2119_056.png" width="50%"/>
+  <img src="./img/tsplot/multiple/1/nearest_neighbor_019_3801_072.png"/>
+  <img src="./img/tsplot/multiple/1/simulated_annealing_019_3276_012.png"/>
+  <img src="./img/tsplot/multiple/1/opt_2_019_2119_056.png"/>
 </div>
 
 ```bash
@@ -298,9 +298,9 @@ tsplot -n 20 -s 2 -g tsp convex-hull genetic-algorithm opt-2
 ```
 
 <div align="center">
-  <img src="./img/tsplot/multiple/2/convex_hull_019_2119_056.png" width="50%"/>
-  <img src="./img/tsplot/multiple/2/genetic_algorithm_019_2119_056.png" width="50%"/>
-  <img src="./img/tsplot/multiple/2/opt_2_019_2119_056.png" width="50%"/>
+  <img src="./img/tsplot/multiple/2/convex_hull_019_2119_056.png"/>
+  <img src="./img/tsplot/multiple/2/genetic_algorithm_019_2119_056.png"/>
+  <img src="./img/tsplot/multiple/2/opt_2_019_2119_056.png"/>
 </div>
 
 ### Autocompletion
