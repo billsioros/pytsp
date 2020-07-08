@@ -6,16 +6,12 @@ import click
 
 from pytsp.cli import Dictionary, Method, Timewindow, plot, safe
 from pytsp.core import TravellingSalesman, TravellingSalesmanTimeWindows
+from pytsp.util import load
 
 
 @click.group()
 @click.option(
-    '-d', '--depot',
-    type=click.Tuple([float, float]), default=(None, None),
-    help='the depot'
-)
-@click.option(
-    '-c', '--cities',
+    '-n', '--number',
     type=click.INT, default=10,
     help='the number of cities',
     show_default=True
@@ -44,7 +40,12 @@ from pytsp.core import TravellingSalesman, TravellingSalesmanTimeWindows
     help='the random number generator seed'
 )
 @click.option(
-    '-p', '--path',
+    '-i', '--input-file', 'input_file',
+    type=click.STRING, default=None,
+    help='the path to a file, containing a vertical list of points'
+)
+@click.option(
+    '-o', '--output-file', 'output_file',
     type=click.STRING, default=None,
     help='where to save the resulting figure file'
 )
@@ -62,28 +63,30 @@ from pytsp.core import TravellingSalesman, TravellingSalesmanTimeWindows
 @click.pass_context
 def cli(
     ctx,
-    depot, cities, metric,
+    number, metric,
     x_axis, y_axis,
-    random_seed, path, logging_lvl,
+    random_seed,
+    input_file, output_file,
+    logging_lvl,
     graph
 ):
     """
     Visualization of various `Travelling Salesman` algorithms
     """
 
-    if random_seed is not None:
-        seed(random_seed)
+    if input_file is None:
+        if random_seed is not None:
+            seed(random_seed)
 
-    if depot != (None, None):
-        cities -= 1
+        cities = [
+            (uniform(x_axis[0], x_axis[1]), uniform(y_axis[0], y_axis[1]))
+            for i in range(number - 1)
+        ]
+    else:
+        loader = load.List(input_file)
+        cities = loader()
 
-    cities = [
-        (uniform(x_axis[0], x_axis[1]), uniform(y_axis[0], y_axis[1]))
-        for i in range(cities)
-    ]
-
-    if depot == (None, None):
-        depot, cities = cities[0], cities[1:]
+    depot, cities = cities[0], cities[1:]
 
     ctx.obj = {
         'depot': depot,
@@ -91,7 +94,7 @@ def cli(
         'metric': metric,
         'x_axis': x_axis,
         'y_axis': y_axis,
-        'path': path,
+        'output_file': output_file,
         'graph': graph
     }
 

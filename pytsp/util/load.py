@@ -37,4 +37,4 @@ class List(Loader):
                 else:
                     raise ValueError(f'{self.file}:{line + 1:02d}: Failed to evaluate entry `{entry}`')
 
-        return entries
+        return list(entries)
