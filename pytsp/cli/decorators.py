@@ -65,8 +65,8 @@ def plot(method):
         plt.tight_layout()
         plt.grid()
 
-        if ctx.obj['path'] is not None:
-            path = Path(ctx.obj['path'])
+        if ctx.obj['output_file'] is not None:
+            path = Path(ctx.obj['output_file'])
 
             f, i = modf(cost)
             f, i = int(f * 100), int(i)
