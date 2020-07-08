@@ -133,7 +133,7 @@ you have earned yourself a cookie !
 
 Let's now look at some examples of using **pytsp**. The examples are presented in least to most confusing order.
 
-_The following examples are simplified versions of a subset of the examples provided in the **[examples](./pytsp/examples/)** directory._
+_The following examples are simplified versions of a subset of the examples provided in the **[examples](./examples/)** directory._
 
 ### A toy Travelling Salesman Problem
 
