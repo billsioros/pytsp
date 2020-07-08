@@ -5,7 +5,7 @@ from pathlib import Path
 from re import match
 
 
-class Parser(ABC):
+class Loader(ABC):
     def __init__(self, filename):
         super().__init__()
 
@@ -22,7 +22,7 @@ class Parser(ABC):
     def __call__(self):
         return set(), {}
 
-class List(Parser):
+class List(Loader):
     @property
     def extension(self):
         return r'txt'
@@ -40,7 +40,7 @@ class List(Parser):
         return points, {}
 
 
-class Matrix(Parser):
+class Matrix(Loader):
     @property
     def extension(self):
         return r'tsv'
