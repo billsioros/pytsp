@@ -3,7 +3,7 @@ from logging import getLogger
 from math import exp, log
 from random import random
 
-from pytsp.core.misc import Model
+from pytsp.core.util import Model
 
 
 class AnnealingMixin(Model):
