@@ -19,6 +19,9 @@
     - [A Simulated Annealing approach to sorting a list of numbers](#a-simulated-annealing-approach-to-sorting-a-list-of-numbers)
     - [A Genetic Algorithm approach to guessing a string](#a-genetic-algorithm-approach-to-guessing-a-string)
   - [Command Line Interface](#command-line-interface)
+    - [Chaining](#chaining)
+      - [Nearest Neighbor, Simulated Annealing and 2-Opt](#nearest-neighbor-simulated-annealing-and-2-opt)
+      - [Eccentricity Comparison, Genetic Algorithm and 2-Opt](#eccentricity-comparison-genetic-algorithm-and-2-opt)
     - [Autocompletion](#autocompletion)
   - [Theoretical Background](#theoretical-background)
     - [Greedy Approaches](#greedy-approaches)
@@ -50,7 +53,7 @@ _If you are interested in the intricate inner workings of the different algorith
 
 The project consists of
 
-- the **[pytsp](./pytsp/)** library, which provides different approaches in tackling the Travelling Salesman Problem (with and without Time Windows). These include
+- the **[pytsp](./pytsp/)** library, which provides various approaches in tackling the Travelling Salesman Problem (with and without Time Windows). These include
   - Greedy approaches
     - [Nearest Neighbor Search](./pytsp/core/tsp.py#L118)
   - Geometric approaches
@@ -264,10 +267,36 @@ if __name__ == '__main__':
 
 ## Command Line Interface
 
-**tsplot** offers a way of demonstrating, comparing and chaining different algorithms.
+**tsplot** provides a means of demonstrating, comparing and chaining different algorithms.
 
 <div align="center">
   <img src="./img/misc/usage.png" width="90%"/>
+</div>
+
+_We are going to focus on `chaining` different algorithms, as simpler cases are demonstrated in the [theoretical background](#theoretical-background) section anyway._
+
+### Chaining
+
+`Chaining` refers to passing the solution produced by the algorithm at hand as input to the algorithm following, so that it can be further improved.
+
+#### Nearest Neighbor, Simulated Annealing and 2-Opt
+
+<div align="center">
+  <img src="./img/tsplot/multiple/1/nearest_neighbor_019_3801_072.png" width="30%"/>
+  <img src="./img/tsplot/multiple/1/simulated_annealing_019_3276_012.png" width="30%"/>
+  <img src="./img/tsplot/multiple/1/opt_2_019_2119_056.png" width="30%"/>
+</div>
+
+#### Eccentricity Comparison, Genetic Algorithm and 2-Opt
+
+```bash
+tsplot -n 20 -s 2 -g -o ./img/tsplot/multiple tsp convex-hull genetic-algorithm opt-2
+```
+
+<div align="center">
+  <img src="./img/tsplot/multiple/2/convex_hull_019_2119_056.png" width="30%"/>
+  <img src="./img/tsplot/multiple/2/genetic_algorithm_019_2119_056.png" width="30%"/>
+  <img src="./img/tsplot/multiple/2/opt_2_019_2119_056.png" width="30%"/>
 </div>
 
 ### Autocompletion
@@ -302,6 +331,10 @@ The sequence of the visited vertices is the output of the algorithm.
   <img src="./img/tsplot/single/nearest_neighbor_020_7199_051.png"/>
 </div>
 
+```bash
+tsplot -n 20 -s 2 -g tsptw nearest-neighbor
+```
+
 ### Geometric Approaches
 
 #### Angle Comparison
@@ -316,6 +349,10 @@ Yet again, the sequence of the visited vertices is the output of the algorithm.
 <div align="center">
   <img src="./img/tsplot/single/angle_020_3349_085.png"/>
 </div>
+
+```bash
+tsplot-n 20 -s 2 -g tsptw convex-hull -c angle
+```
 
 #### Eccentricity Comparison
 
@@ -332,6 +369,10 @@ Now the vertices are not inserted into the partial tour in maximal angle order. 
 <div align="center">
   <img src="./img/tsplot/single/eccentricity_020_2125_012.png"/>
 </div>
+
+```bash
+tsplot -n 20 -s 2 -g tsptw convex-hull -c eccentricity
+```
 
 ### Local Search Approaches
 
@@ -362,6 +403,10 @@ The actual algorithm utilizing the mechanism explained above performs the follow
   <img src="./img/tsplot/single/opt_2_020_2303_056.png"/>
 </div>
 
+```bash
+tsplot-n 20 -s 2 -g tsptw opt-2
+```
+
 ### Meta-heuristic Approaches
 
 _In this section, only a high level overview of the algorithms is going to be provided, as the exact steps of each algorithm are of miniscule importance, when compared to the mechanisms performing the `mutatation`, `selection`, `crossover`, `fitness` assessment, e.t.c of individuals._
@@ -388,6 +433,10 @@ Given an individual, the genetic algorithm performs the following
   <img src="./img/tsplot/single/genetic_algorithm_020_2468_040.png"/>
 </div>
 
+```bash
+tsplot -n 20 -s 2 -g tsptw genetic-algorithm
+```
+
 #### Simulated Annealing
 
 Given an initial solution, a cooling rate and an initial temperature, the simulated annealing heuristic performs the following
@@ -405,6 +454,10 @@ Given an initial solution, a cooling rate and an initial temperature, the simula
   <img src="./img/tsplot/single/simulated_annealing_020_2686_037.png"/>
 </div>
 
+```bash
+tsplot -n 20 -s 2 -g tsptw simulated-annealing
+```
+
 #### Compressed Annealing
 
 _A variant of Simulated Annealing incorporating a variable penalty method to solve the **Travelling Salesman Problem with Time Windows**. Augmenting temperature from traditional Simulated Annealing with the concept of pressure (analogous to the value of the penalty multiplier), compressed annealing relaxes the time-window constraints by integrating a penalty method within a stochastic search procedure._
@@ -417,7 +470,9 @@ For anyone interested in achieving a greater theoretical understanding of the al
   <img src="./img/tsplot/single/compressed_annealing_020_3051_012.png"/>
 </div>
 
-_The results presented can be reproduced by running `tsplot -c 20 -s 2 -g [CLASS][ALGORITHM]`_
+```bash
+tsplot -n 20 -s 2 -g tsptw compressed-annealing
+```
 
 ### A Comprehensive Study of the Travelling Salesman Problem
 
