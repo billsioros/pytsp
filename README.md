@@ -270,7 +270,13 @@ if __name__ == '__main__':
 **tsplot** provides a means of demonstrating, comparing and chaining different algorithms.
 
 <div align="center">
-  <img src="./img/misc/usage.png" width="90%"/>
+  <img src="./img/misc/usage.png" width="80%"/>
+</div>
+
+_Apart from the main options showcased above, each sub-command has its own sub-options, which can be viewed with the `--help` flag, as such_
+
+<div align="center">
+  <img src="./img/misc/convex_hull_usage.png" width="90%"/>
 </div>
 
 _We are going to focus on `chaining` different algorithms, as simpler cases are demonstrated in the [theoretical background](#theoretical-background) section anyway._
