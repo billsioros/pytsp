@@ -294,13 +294,13 @@ tsplot -n 20 -s 2 -g tsp nearest-neighbor simulated-annealing opt-2
 #### Eccentricity Comparison, Genetic Algorithm and 2-Opt
 
 ```bash
-tsplot -n 20 -s 2 -g tsp convex-hull genetic-algorithm opt-2
+tsplot -n 20 -s 0 -g tsp convex-hull genetic-algorithm opt-2
 ```
 
 <div align="center">
-  <img src="./img/tsplot/multiple/2/convex_hull_019_2119_056.png"/>
-  <img src="./img/tsplot/multiple/2/genetic_algorithm_019_2119_056.png"/>
-  <img src="./img/tsplot/multiple/2/opt_2_019_2119_056.png"/>
+  <img src="./img/tsplot/multiple/2/convex_hull_019_2540_090.png"/>
+  <img src="./img/tsplot/multiple/2/genetic_algorithm_019_1441_011.png"/>
+  <img src="./img/tsplot/multiple/2/opt_2_019_1398_060.png"/>
 </div>
 
 ### Autocompletion
