@@ -67,7 +67,7 @@ The project consists of
 ## Installation
 
 <div align="center">
-  <img src="./img/install.png" width="70%"/>
+  <img src="./img/misc/install.png" width="70%"/>
 </div>
 
 ## Introduction
@@ -266,7 +266,7 @@ if __name__ == '__main__':
 **tsplot** offers a way of demonstrating, comparing and chaining different algorithms.
 
 <div align="center">
-  <img src="./img/usage.png" width="90%"/>
+  <img src="./img/misc/usage.png" width="90%"/>
 </div>
 
 ## Theoretical Background
