@@ -19,6 +19,7 @@
     - [A Simulated Annealing approach to sorting a list of numbers](#a-simulated-annealing-approach-to-sorting-a-list-of-numbers)
     - [A Genetic Algorithm approach to guessing a string](#a-genetic-algorithm-approach-to-guessing-a-string)
   - [Command Line Interface](#command-line-interface)
+    - [Autocompletion](#autocompletion)
   - [Theoretical Background](#theoretical-background)
     - [Greedy Approaches](#greedy-approaches)
       - [Nearest Neighbor Search](#nearest-neighbor-search)
@@ -268,6 +269,16 @@ if __name__ == '__main__':
 <div align="center">
   <img src="./img/misc/usage.png" width="90%"/>
 </div>
+
+### Autocompletion
+
+**tsplot** is a [Click](https://click.palletsprojects.com/en/7.x/) based application, which means that enabling the autocompletion of its' sub-commands and options can be achieved as simply as adding a line to your `.*rc` file. To be more specific, when it comes to `bash` adding the following line to your `.bashrc` file will do exactly that.
+
+```bash
+eval "$(_TSPLOT_COMPLETE=source_bash tsplot)"
+```
+
+For more information, on enabling tab completion on different shells, please refer [here](https://click.palletsprojects.com/en/7.x/bashcomplete/).
 
 ## Theoretical Background
 
