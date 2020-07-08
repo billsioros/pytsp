@@ -16,11 +16,11 @@ class Loader(ABC):
 
     @abstractstaticmethod
     def extension():
-        return ''
+        pass
 
     @abstractmethod
     def __call__(self):
-        return set(), {}
+        pass
 
 class List(Loader):
     @staticmethod
