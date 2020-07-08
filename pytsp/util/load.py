@@ -28,13 +28,13 @@ class List(Loader):
         return r'txt'
 
     def __call__(self):
-        entries = set()
+        entries = []
 
         with self.file.open() as stream:
             for line, entry in enumerate(stream.readlines()):
                 if match(r'^\([\+\-0-9\.]+\s*,\s*[\+\-0-9\.]+\)$', entry):
-                    entries.add(eval(entry))
+                    entries.append(eval(entry))
                 else:
                     raise ValueError(f'{self.file}:{line + 1:02d}: Failed to evaluate entry `{entry}`')
 
-        return list(entries)
+        return list(dict.fromkeys(entries))
