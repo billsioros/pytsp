@@ -1,3 +1,5 @@
+![alt text](./img/misc/icon.png)
+
 <p align="center">
   <img src="https://img.shields.io/badge/license-MIT-blue"/>
   <img src="https://img.shields.io/badge/python-3.8-blue"/>
@@ -7,36 +9,33 @@
   <img src="https://img.shields.io/badge/status-development-yellow"/>
 </p>
 
-# The Travelling Salesman Problem in Python
-
-- [The Travelling Salesman Problem in Python](#the-travelling-salesman-problem-in-python)
-  - [Purpose](#purpose)
-  - [Overview](#overview)
-  - [Installation](#installation)
-  - [Introduction](#introduction)
-  - [Examples](#examples)
-    - [A toy Travelling Salesman Problem](#a-toy-travelling-salesman-problem)
-    - [A Simulated Annealing approach to sorting a list of numbers](#a-simulated-annealing-approach-to-sorting-a-list-of-numbers)
-    - [A Genetic Algorithm approach to guessing a string](#a-genetic-algorithm-approach-to-guessing-a-string)
-  - [Command Line Interface](#command-line-interface)
-    - [Chaining](#chaining)
-      - [Nearest Neighbor, Simulated Annealing and 2-Opt](#nearest-neighbor-simulated-annealing-and-2-opt)
-      - [Eccentricity Comparison, Genetic Algorithm and 2-Opt](#eccentricity-comparison-genetic-algorithm-and-2-opt)
-    - [Autocompletion](#autocompletion)
-  - [Theoretical Background](#theoretical-background)
-    - [Greedy Approaches](#greedy-approaches)
-      - [Nearest Neighbor Search](#nearest-neighbor-search)
-    - [Geometric Approaches](#geometric-approaches)
-      - [Angle Comparison](#angle-comparison)
-      - [Eccentricity Comparison](#eccentricity-comparison)
-    - [Local Search Approaches](#local-search-approaches)
-      - [2-opt](#2-opt)
-    - [Meta-heuristic Approaches](#meta-heuristic-approaches)
-      - [Genetic Algorithm](#genetic-algorithm)
-      - [Simulated Annealing](#simulated-annealing)
-      - [Compressed Annealing](#compressed-annealing)
-    - [A Comprehensive Study of the Travelling Salesman Problem](#a-comprehensive-study-of-the-travelling-salesman-problem)
-  - [License](#license)
+- [Purpose](#purpose)
+- [Overview](#overview)
+- [Installation](#installation)
+- [Introduction](#introduction)
+- [Examples](#examples)
+  - [A toy Travelling Salesman Problem](#a-toy-travelling-salesman-problem)
+  - [A Simulated Annealing approach to sorting a list of numbers](#a-simulated-annealing-approach-to-sorting-a-list-of-numbers)
+  - [A Genetic Algorithm approach to guessing a string](#a-genetic-algorithm-approach-to-guessing-a-string)
+- [Command Line Interface](#command-line-interface)
+  - [Chaining](#chaining)
+    - [Nearest Neighbor, Simulated Annealing and 2-Opt](#nearest-neighbor-simulated-annealing-and-2-opt)
+    - [Eccentricity Comparison, Genetic Algorithm and 2-Opt](#eccentricity-comparison-genetic-algorithm-and-2-opt)
+  - [Autocompletion](#autocompletion)
+- [Theoretical Background](#theoretical-background)
+  - [Greedy Approaches](#greedy-approaches)
+    - [Nearest Neighbor Search](#nearest-neighbor-search)
+  - [Geometric Approaches](#geometric-approaches)
+    - [Angle Comparison](#angle-comparison)
+    - [Eccentricity Comparison](#eccentricity-comparison)
+  - [Local Search Approaches](#local-search-approaches)
+    - [2-opt](#2-opt)
+  - [Meta-heuristic Approaches](#meta-heuristic-approaches)
+    - [Genetic Algorithm](#genetic-algorithm)
+    - [Simulated Annealing](#simulated-annealing)
+    - [Compressed Annealing](#compressed-annealing)
+  - [A Comprehensive Study of the Travelling Salesman Problem](#a-comprehensive-study-of-the-travelling-salesman-problem)
+- [License](#license)
 
 ## Purpose
 
