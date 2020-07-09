@@ -140,3 +140,6 @@ dmypy.json
 
 # Editor
 .vscode/
+
+# Photoshop
+*.psd
