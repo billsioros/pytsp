@@ -132,9 +132,11 @@ if __name__ == '__main__':
 
 If you answered
 
-  Hello Mr.Sioros
-  Greetings Sir.Vasileios
-  Good evening Vasilis
+```txt
+Hello Mr.Sioros
+Greetings Sir.Vasileios
+Good evening Vasilis
+```
 
 you have earned yourself a cookie !
 
