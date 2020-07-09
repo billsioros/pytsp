@@ -14,7 +14,7 @@ with open(path.join(cwd, 'requirements.txt'), encoding='utf-8') as file:
 
 setup(
     name='pytsp',
-    version='0.8',
+    version='1.0',
 
     packages=find_packages(),
     include_package_data=True,

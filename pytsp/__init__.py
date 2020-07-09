@@ -24,7 +24,7 @@ __credits__ = [
     'Vasileios Sioros (billsioros)',
 ]
 __license__ = 'MIT License'
-__version__ = '0.8'
+__version__ = '1.0'
 __maintainer__ = 'Vasileios Sioros'
 __email__ = 'billsioros97@gmail.com'
 __status__ = 'Development'
