@@ -1,12 +1,18 @@
 ![alt text](./img/misc/icon.png)
 
 <p align="center">
-  <img src="https://img.shields.io/badge/license-MIT-blue"/>
-  <img src="https://img.shields.io/badge/python-3.8-blue"/>
+  <a href="https://opensource.org/licenses/MIT">
+    <img src="https://img.shields.io/badge/license-MIT-blue"/>
+  </a>
+  <a href="https://www.python.org/downloads/">
+    <img src="https://img.shields.io/badge/python-3.8-blue"/>
+  </a>
   <img src="https://img.shields.io/badge/version-1.0-blue"/>
   <img src="https://img.shields.io/badge/build-passing-green"/>
-  <img src="https://img.shields.io/badge/maintained-yes-green"/>
-  <img src="https://img.shields.io/badge/status-development-yellow"/>
+  <a href="https://github.com/billsioros">
+    <img src="https://img.shields.io/badge/maintained-yes-green"/>
+  </a>
+  <img src="https://img.shields.io/badge/status-beta-yellow"/>
 </p>
 
 - [Purpose](#purpose)
