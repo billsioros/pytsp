@@ -75,9 +75,12 @@ The project consists of
 
 ## Installation
 
-<div align="center">
-  <img src="./img/misc/install.png" width="70%"/>
-</div>
+```bash
+python -m pip install virtualenv
+python -m virtualenv .env
+. .env/Scripts/activate
+pip install git+https://github.com/billsioros/pytsp
+```
 
 ## Introduction
 
